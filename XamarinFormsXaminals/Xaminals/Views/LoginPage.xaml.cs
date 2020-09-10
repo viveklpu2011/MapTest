@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 
 using Xamarin.Forms;
+using Xaminals.ViewModels;
 
 namespace Xaminals.Views
 {
@@ -10,6 +11,7 @@ namespace Xaminals.Views
         public LoginPage()
         {
             InitializeComponent();
+            BindingContext = new LoginViewModel(Navigation);
         }
 
     }

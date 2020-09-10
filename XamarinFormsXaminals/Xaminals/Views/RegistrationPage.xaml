@@ -6,26 +6,31 @@
     <ContentPage.Content>
         <ScrollView>
         <StackLayout VerticalOptions="CenterAndExpand">
-            <Label Text="Registration" HorizontalOptions="Center"
+                <Image HeightRequest="30" WidthRequest="30" Margin="10,0,0,0" HorizontalOptions="StartAndExpand" Source="back.png">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding BackCommand}" />
+                    </Image.GestureRecognizers>
+                </Image>
+                <Label Text="Registration" HorizontalOptions="Center"
                    VerticalOptions="Center"
                    TextColor="Black"
                    FontAttributes="Bold"
                    FontSize="Large"/>
 
-            <Entry Placeholder="Username" VerticalOptions="Center"
+            <Entry Placeholder="Email" VerticalOptions="Center" Text="{Binding Email}"
                    BackgroundColor="Transparent"
                    Margin="10,20"/>
-             <Entry Placeholder="Password" VerticalOptions="Center"
+             <Entry Placeholder="Password" VerticalOptions="Center"  Text="{Binding Password}"
                      BackgroundColor="Transparent"
                    Margin="10,0,10,10" IsPassword="True"/>
-            <Entry Placeholder="Confirm Password" VerticalOptions="Center"
+                <Entry Placeholder="Confirm Password" VerticalOptions="Center" Text="{Binding ConfirmPassword}"
                      BackgroundColor="Transparent"
                    Margin="10,0,10,20" IsPassword="True"/>
-            <DatePicker BackgroundColor="Transparent"
+            <DatePicker BackgroundColor="Transparent" Date="{Binding Dob}"
                    Margin="10,0,10,10"/>
-            <Editor Placeholder="Address" BackgroundColor="Transparent"
+            <Editor Placeholder="Address" BackgroundColor="Transparent" Text="{Binding Address}"
                    Margin="10,0,10,20"/>
-            <Button BackgroundColor="Green" Margin="10"
+                <Button BackgroundColor="Green" Margin="10"   Command="{Binding RegisterCommand}"
                     Text="Registration"
                     TextColor="White"
                     FontSize="Large"/>

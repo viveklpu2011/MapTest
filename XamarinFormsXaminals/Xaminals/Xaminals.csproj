@@ -10,16 +10,15 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Toasts.Forms.Plugin" Version="2.0.4" />
     <PackageReference Include="Xamarin.Forms" Version="4.8.0.1364" />
     <PackageReference Include="Xamarin.Essentials" Version="1.5.3.2" />
     <PackageReference Include="sqlite-net-pcl" Version="1.7.335" />
     <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+    <PackageReference Include="Xamarin.Forms.BehaviorsPack" Version="2.1.1" />
     <PackageReference Include="Xamarin.Forms.Visual.Material" Version="4.8.0.1364" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Views\" />
-    <Folder Include="ViewModels\" />
-    <Folder Include="Models\" />
     <Folder Include="Controls\" />
     <Folder Include="Data\" />
     <Folder Include="Interfaces\" />
@@ -33,5 +32,10 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Images\amplogo.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Update="Views\HomePage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
   </ItemGroup>
 </Project>

@@ -19,13 +19,13 @@
                    FontAttributes="Bold"
                    FontSize="Large"/>
 
-            <Entry Placeholder="Username" VerticalOptions="Center"
+            <Entry Placeholder="Email" VerticalOptions="Center" Text="{Binding Email}"
                    BackgroundColor="Transparent"
                    Margin="10,0"/>
-             <Entry Placeholder="Password" VerticalOptions="Center"
+             <Entry Placeholder="Password" VerticalOptions="Center" Text="{Binding Password}"
                      BackgroundColor="Transparent"
                    Margin="10,0,10,20" IsPassword="True"/>
-            <Button BackgroundColor="Green" Margin="10"
+                <Button BackgroundColor="Green" Margin="10" Command="{Binding LoginCommand}"
                     Text="Login"
                     TextColor="White"
                     FontSize="Large"
@@ -35,10 +35,10 @@
                     <FormattedString>
                         <Span Text="Don't have account? "/>
                         <Span Text="Click to Register" TextColor="Blue" TextDecorations="Underline">
-                            <Span.GestureRecognizers>
-                                <TapGestureRecognizer/>
-                            </Span.GestureRecognizers>
-                        </Span>
+                                <Span.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding RegisterCommand}" />
+                                </Span.GestureRecognizers>
+                            </Span>
                     </FormattedString>
                 </Label.FormattedText>
             </Label>

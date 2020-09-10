@@ -1,5 +1,7 @@
 ﻿using Foundation;
+using Plugin.Toasts;
 using UIKit;
+using Xamarin.Forms;
 
 namespace Xaminals.iOS
 {
@@ -10,6 +12,10 @@ namespace Xaminals.iOS
         {
             global::Xamarin.Forms.Forms.Init();
             global::Xamarin.Forms.FormsMaterial.Init();
+
+            DependencyService.Register<ToastNotificatorImplementation>();
+            ToastNotificatorImplementation.Init();
+
             LoadApplication(new App());
 
             return base.FinishedLaunching(app, options);
