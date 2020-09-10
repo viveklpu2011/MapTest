@@ -107,7 +107,7 @@ namespace Xaminals.Views
                     break;
                 }
             }
-            catch
+            catch(Exception ex)
             {
             }
           

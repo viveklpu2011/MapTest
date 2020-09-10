@@ -29,39 +29,40 @@ namespace Xaminals.Views
         {
             var loadingDialog = await MaterialDialog.Instance.LoadingDialogAsync(message: "Please Wait..");
             try
-            {
-                
-                var locator = CrossGeolocator.Current;
-                locator.AllowsBackgroundUpdates = true;
-                var position = await locator.GetPositionAsync(10000);
-
-
-                var start_pin = new CustomPin
                 {
-                    Pin = new Pin
+
+                    var locator = CrossGeolocator.Current;
+                   // locator.AllowsBackgroundUpdates = true;
+                    var position = await locator.GetPositionAsync(10000);
+
+
+                    var start_pin = new CustomPin
                     {
-                        Type = PinType.Place,
-                        Position = new Position(Convert.ToDouble(position.Latitude), Convert.ToDouble(position.Longitude)),
-                        Label = "",
-                        Address = ""
-                    },
-                    Id = "Xamarin",
-                    startPin = true
-                };
-                customMap.CustomPins = new List<CustomPin> { start_pin };
-                if (Device.OS == TargetPlatform.iOS)
-                {
-                    customMap.Pins.Add(start_pin.Pin);
+                        Pin = new Pin
+                        {
+                            Type = PinType.Place,
+                            Position = new Position(Convert.ToDouble(position.Latitude), Convert.ToDouble(position.Longitude)),
+                            Label = "",
+                            Address = ""
+                        },
+                        Id = "Xamarin",
+                        startPin = true
+                    };
+                    customMap.CustomPins = new List<CustomPin> { start_pin };
+                    if (Device.OS == TargetPlatform.iOS)
+                    {
+                        customMap.Pins.Add(start_pin.Pin);
 
+                    }
+                    customMap.MoveToRegion(MapSpan.FromCenterAndRadius(new Position(Convert.ToDouble(position.Latitude), Convert.ToDouble(position.Longitude)), Xamarin.Forms.Maps.Distance.FromKilometers(10)));
+
+                    await loadingDialog.DismissAsync();
                 }
-                customMap.MoveToRegion(MapSpan.FromCenterAndRadius(new Position(Convert.ToDouble(position.Latitude), Convert.ToDouble(position.Longitude)), Xamarin.Forms.Maps.Distance.FromKilometers(10)));
-
-                await loadingDialog.DismissAsync();
-            }
-            catch (Exception ex)
-            {
-                await loadingDialog.DismissAsync();
-            }
+                catch (Exception ex)
+                {
+                    await loadingDialog.DismissAsync();
+                }
+            
         }
 
         protected override void OnAppearing()

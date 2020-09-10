@@ -19,7 +19,7 @@ namespace Xaminals
             LoggedIn objUser = App.Database.GetUser();
             if (objUser != null)
             {
-                MainPage = new NavigationPage(new HomePage());
+                MainPage = new NavigationPage(new HomePage()) { BarBackgroundColor = Color.Green, BarTextColor = Color.White };
             }
             else
             {

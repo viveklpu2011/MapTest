@@ -2,15 +2,12 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
               Visual="Material"
+             Title="Registration"
              x:Class="Xaminals.Views.RegistrationPage">
     <ContentPage.Content>
         <ScrollView>
         <StackLayout VerticalOptions="CenterAndExpand">
-                <Image HeightRequest="30" WidthRequest="30" Margin="10,0,0,0" HorizontalOptions="StartAndExpand" Source="back.png">
-                    <Image.GestureRecognizers>
-                        <TapGestureRecognizer Command="{Binding BackCommand}" />
-                    </Image.GestureRecognizers>
-                </Image>
+             
                 <Label Text="Registration" HorizontalOptions="Center"
                    VerticalOptions="Center"
                    TextColor="Black"

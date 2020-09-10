@@ -116,7 +116,7 @@ namespace Xaminals.ViewModels
                     obj.Email = checkUser.Email;
                     obj.Password = checkUser.Password;
                     App.Database.SaveLoggedIn(obj);
-                    App.Current.MainPage = new HomePage();
+                    App.Current.MainPage = new NavigationPage(new HomePage()) { BarBackgroundColor = Color.Green, BarTextColor = Color.White };
                 }
             }
             catch (Exception ex)
@@ -133,7 +133,7 @@ namespace Xaminals.ViewModels
             {
                 return new Command((data) =>
                 {
-                     navigation.PushModalAsync(new RegistrationPage());
+                     navigation.PushAsync(new RegistrationPage());
                 });
             }
         }

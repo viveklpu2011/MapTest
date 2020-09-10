@@ -214,7 +214,7 @@ namespace Xaminals.ViewModels
                 App.Database.SaveLoggedIn(obj);
 
 
-                App.Current.MainPage = new HomePage();
+                App.Current.MainPage = new NavigationPage(new HomePage()) { BarBackgroundColor = Color.Green, BarTextColor = Color.White };
 
 
             }

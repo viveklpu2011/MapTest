@@ -13,7 +13,7 @@ namespace Xaminals.iOS
             global::Xamarin.Forms.Forms.Init();
             XF.Material.iOS.Material.Init();
             global::Xamarin.Forms.FormsMaterial.Init();
-
+            Xamarin.FormsMaps.Init();
             DependencyService.Register<ToastNotificatorImplementation>();
             ToastNotificatorImplementation.Init();
 
