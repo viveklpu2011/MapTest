@@ -112,6 +112,10 @@ namespace Xaminals.ViewModels
                 }
                 else
                 {
+                    LoggedIn obj = new LoggedIn();
+                    obj.Email = checkUser.Email;
+                    obj.Password = checkUser.Password;
+                    App.Database.SaveLoggedIn(obj);
                     App.Current.MainPage = new HomePage();
                 }
             }

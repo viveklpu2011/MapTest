@@ -189,8 +189,12 @@ namespace Xaminals.ViewModels
                 objUser.Dob = Dob;
                 App.Database.SaveLoggedInUser(objUser);
 
+                LoggedIn  obj  = new LoggedIn ();
+                obj.Email = Email;
+                obj.Password = Password;
+                App.Database.SaveLoggedIn(obj);
 
-                 
+
                 App.Current.MainPage = new HomePage();
 
 

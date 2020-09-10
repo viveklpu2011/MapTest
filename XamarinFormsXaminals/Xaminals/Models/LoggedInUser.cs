@@ -14,4 +14,12 @@ namespace Xaminals.Models
         public string Address { get; set; }
         public DateTime Dob { get; set; }
     }
+    public class LoggedIn
+    {
+        [PrimaryKey, AutoIncrement]
+        public int Id { get; set; }
+        public string Email { get; set; }
+        public string Password { get; set; }
+        
+    }
 }

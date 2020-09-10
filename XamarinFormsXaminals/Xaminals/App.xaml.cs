@@ -14,11 +14,12 @@ namespace Xaminals
         {
             InitializeComponent();
 
-           
-            LoggedInUser objUser = App.Database.GetUser();
+            XF.Material.Forms.Material.Init(this);
+
+            LoggedIn objUser = App.Database.GetUser();
             if (objUser != null)
             {
-                MainPage = new NavigationPage(new HomePage()) { BarBackgroundColor = Color.Green, BarTextColor = Color.White };
+                MainPage = new NavigationPage(new HomePage());
             }
             else
             {

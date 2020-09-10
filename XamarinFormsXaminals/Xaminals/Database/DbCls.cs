@@ -14,15 +14,16 @@ namespace Xaminals.Database
             {
                 database = new SQLiteConnection(dbPath);
                 database.CreateTable<LoggedInUser>();
+                database.CreateTable<LoggedIn>();
             }
             catch (Exception ex)
             {
 
             }
         }
-        public LoggedInUser GetUser()
+        public LoggedIn GetUser()
         {
-            return database.Table<LoggedInUser>().FirstOrDefault();
+            return database.Table<LoggedIn>().FirstOrDefault();
         }
         public LoggedInUser CheckLoggedInUser(string email)
         {
@@ -37,5 +38,28 @@ namespace Xaminals.Database
         {
             return database.Insert(item);
         }
+        public int SaveLoggedIn(LoggedIn item)
+        {
+            return database.Insert(item);
+        }
+        public int ClearLoginDetails()
+        {
+            var status = 0;
+            try
+            {
+                var data = database.Table<LoggedIn>().ToList();
+                foreach (var item in data)
+                {
+                    status = database.Delete(item);
+                }
+
+            }
+            catch (Exception ex)
+            {
+
+            }
+            return status;
+        }
+
     }
 }
