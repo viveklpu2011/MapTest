@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+              Visual="Material"
+             x:Class="Xaminals.Views.RegistrationPage">
+    <ContentPage.Content>
+        <ScrollView>
+        <StackLayout VerticalOptions="CenterAndExpand">
+            <Label Text="Registration" HorizontalOptions="Center"
+                   VerticalOptions="Center"
+                   TextColor="Black"
+                   FontAttributes="Bold"
+                   FontSize="Large"/>
+
+            <Entry Placeholder="Username" VerticalOptions="Center"
+                   BackgroundColor="Transparent"
+                   Margin="10,20"/>
+             <Entry Placeholder="Password" VerticalOptions="Center"
+                     BackgroundColor="Transparent"
+                   Margin="10,0,10,10" IsPassword="True"/>
+            <Entry Placeholder="Confirm Password" VerticalOptions="Center"
+                     BackgroundColor="Transparent"
+                   Margin="10,0,10,20" IsPassword="True"/>
+            <DatePicker BackgroundColor="Transparent"
+                   Margin="10,0,10,10"/>
+            <Editor Placeholder="Address" BackgroundColor="Transparent"
+                   Margin="10,0,10,20"/>
+            <Button BackgroundColor="Green" Margin="10"
+                    Text="Registration"
+                    TextColor="White"
+                    FontSize="Large"/>
+           
+        </StackLayout>
+            </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

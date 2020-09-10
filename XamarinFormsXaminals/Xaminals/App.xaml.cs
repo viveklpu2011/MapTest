@@ -1,5 +1,8 @@
-﻿using Xamarin.Forms;
+﻿using System;
+using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using Xaminals.Database;
+using Xaminals.Views;
 
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace Xaminals
@@ -10,9 +13,26 @@ namespace Xaminals
         {
             InitializeComponent();
 
-            MainPage = new AppShell();
+            MainPage = new NavigationPage(new LoginPage()) { BarBackgroundColor = Color.Green,BarTextColor=Color.White };
         }
-
+        static DbCls database;
+        public static DbCls Database
+        {
+            get
+            {
+                if (database == null)
+                {
+                    try
+                    {
+                        database = new DbCls(DependencyService.Get<Interfaces.IFileHelper>().GetLocalFilePath("DbCls.db"));
+                    }
+                    catch (Exception ex)
+                    {
+                    }
+                }
+                return database;
+            }
+        }
         protected override void OnStart()
         {
             // Handle when your app starts

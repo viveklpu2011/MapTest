@@ -17,6 +17,7 @@ namespace Xaminals.Droid
 
             Window.SetStatusBarColor(Android.Graphics.Color.Argb(255, 0, 0, 0));
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
+            global::Xamarin.Forms.FormsMaterial.Init(this, savedInstanceState);
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             LoadApplication(new App());
         }

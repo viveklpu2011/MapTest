@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             Visual="Material"
+             NavigationPage.HasBackButton="False"
+             NavigationPage.HasNavigationBar="False"
+             Title="Login"
+             x:Class="Xaminals.Views.LoginPage">
+    <ContentPage.Content>
+        <ScrollView>
+        <StackLayout VerticalOptions="CenterAndExpand">
+            <Label Text="LOGIN" HorizontalOptions="Center"
+                   VerticalOptions="Center"
+                   TextColor="Black"
+                   FontAttributes="Bold"
+                   FontSize="Large"/>
+
+            <Entry Placeholder="Username" VerticalOptions="Center"
+                   BackgroundColor="Transparent"
+                   Margin="10,20"/>
+             <Entry Placeholder="Password" VerticalOptions="Center"
+                     BackgroundColor="Transparent"
+                   Margin="10,0,10,20" IsPassword="True"/>
+            <Button BackgroundColor="Green" Margin="10"
+                    Text="Login"
+                    TextColor="White"
+                    FontSize="Large"
+                    x:Name="btnlogin"
+                    Clicked="btnlogin_Clicked"/>
+            <Label HorizontalOptions="Center">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="Don't have account? "/>
+                        <Span Text="Click to Register" TextColor="Blue" TextDecorations="Underline">
+                            <Span.GestureRecognizers>
+                                <TapGestureRecognizer/>
+                            </Span.GestureRecognizers>
+                        </Span>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+        </StackLayout>
+            </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
