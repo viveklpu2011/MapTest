@@ -20,7 +20,8 @@ namespace Xaminals.ViewModels
         {
             this.navigation = navigation;
             Dob = DateTime.Now;
-        }
+            Maxdt = DateTime.Now.AddDays(-1);
+        } 
 
 
 
@@ -92,6 +93,24 @@ namespace Xaminals.ViewModels
                     dob = value;
 
                     OnPropertyChanged("Dob");
+                }
+            }
+        }
+        private DateTime maxdt
+        {
+            get;
+            set;
+        }
+        public DateTime Maxdt
+        {
+            get { return maxdt; }
+            set
+            {
+                if (maxdt != value)
+                {
+                    maxdt = value;
+
+                    OnPropertyChanged("Maxdt");
                 }
             }
         }
