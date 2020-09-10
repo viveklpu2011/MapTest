@@ -12,9 +12,5 @@ namespace Xaminals.Views
             InitializeComponent();
         }
 
-        void btnlogin_Clicked(System.Object sender, System.EventArgs e)
-        {
-            Navigation.PushAsync(new RegistrationPage());
-        }
     }
 }

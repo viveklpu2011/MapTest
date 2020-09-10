@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:Xaminals.Extension"
              Visual="Material"
              NavigationPage.HasBackButton="False"
              NavigationPage.HasNavigationBar="False"
@@ -9,6 +9,10 @@
     <ContentPage.Content>
         <ScrollView>
         <StackLayout VerticalOptions="CenterAndExpand">
+             <Image Source="{local:EmbeddedImage Xaminals.Images.amplogo.jpg}"
+                   Aspect="Fill"
+                    Margin="30,0"
+                    HeightRequest="100"/>
             <Label Text="LOGIN" HorizontalOptions="Center"
                    VerticalOptions="Center"
                    TextColor="Black"
@@ -17,7 +21,7 @@
 
             <Entry Placeholder="Username" VerticalOptions="Center"
                    BackgroundColor="Transparent"
-                   Margin="10,20"/>
+                   Margin="10,0"/>
              <Entry Placeholder="Password" VerticalOptions="Center"
                      BackgroundColor="Transparent"
                    Margin="10,0,10,20" IsPassword="True"/>
@@ -25,8 +29,7 @@
                     Text="Login"
                     TextColor="White"
                     FontSize="Large"
-                    x:Name="btnlogin"
-                    Clicked="btnlogin_Clicked"/>
+                    x:Name="btnlogin"/>
             <Label HorizontalOptions="Center">
                 <Label.FormattedText>
                     <FormattedString>

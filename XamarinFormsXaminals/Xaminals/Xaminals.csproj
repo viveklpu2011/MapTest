@@ -24,6 +24,14 @@
     <Folder Include="Data\" />
     <Folder Include="Interfaces\" />
     <Folder Include="Database\" />
+    <Folder Include="Extension\" />
+    <Folder Include="Images\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Remove="Images\amplogo.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Images\amplogo.jpg" />
+  </ItemGroup>
 </Project>
