@@ -31,10 +31,14 @@ namespace Xaminals.ViewModels
         {
             get
             {
-                return new Command((data) =>
+                return new Command(async (data) =>
                 {
-                    App.Database.ClearLoginDetails();
-                    App.Current.MainPage =new LoginPage();
+                    bool answer = await App.Current.MainPage.DisplayAlert("", "Are you sure?", "Yes", "No");
+                    if (answer)
+                    {
+                        App.Database.ClearLoginDetails();
+                        App.Current.MainPage = new LoginPage();
+                    }
                 });
             }
         }
