@@ -19,7 +19,7 @@
                    FontAttributes="Bold"
                    FontSize="Large"/>
 
-            <Entry Placeholder="Email" VerticalOptions="Center" Text="{Binding Email}"
+            <Entry Placeholder="Username" VerticalOptions="Center" Text="{Binding Email}"
                    BackgroundColor="Transparent"
                    Margin="10,0"/>
              <Entry Placeholder="Password" VerticalOptions="Center" Text="{Binding Password}"

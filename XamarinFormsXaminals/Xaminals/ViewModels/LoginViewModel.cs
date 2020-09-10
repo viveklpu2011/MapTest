@@ -77,22 +77,22 @@ namespace Xaminals.ViewModels
 
                 if (string.IsNullOrWhiteSpace(Email))
                 {
-                    error += "Please provide email";
+                    error += "Please provide username";
                 }
                 if (!string.IsNullOrWhiteSpace(error))
                 {
                     await DependencyService.Get<IToastNotificator>().Notify(ToastNotificationType.Error, "Error", error, TimeSpan.FromSeconds(2));
                     return;
                 }
-                if (!string.IsNullOrEmpty(Email))
-                {
-                    Regex regex = new Regex(@"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$");
-                    Match match = regex.Match(Email);
-                    if (!match.Success)
-                    {
-                        error += "Please enter valid email";
-                    }
-                }
+                //if (!string.IsNullOrEmpty(Email))
+                //{
+                //    Regex regex = new Regex(@"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$");
+                //    Match match = regex.Match(Email);
+                //    if (!match.Success)
+                //    {
+                //        error += "Please enter valid email";
+                //    }
+                //}
                 if (string.IsNullOrWhiteSpace(Password))
                 {
                     error += "Please provide password";
