@@ -22,10 +22,8 @@
     <PackageReference Include="XF.Material" Version="1.7.4" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Data\" />
     <Folder Include="Interfaces\" />
     <Folder Include="Database\" />
-    <Folder Include="Extension\" />
     <Folder Include="Images\" />
   </ItemGroup>
 
