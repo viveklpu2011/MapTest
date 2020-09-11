@@ -23,8 +23,10 @@
     <ContentPage.Content>
          
            
-                <local:CustomMap x:Name="customMap" IsShowingUser="true"  MapType="Street" VerticalOptions="FillAndExpand"
-                                 HorizontalOptions="FillAndExpand"></local:CustomMap>
-           
+                <!--<local:CustomMap x:Name="customMap" IsShowingUser="true"  MapType="Street" VerticalOptions="FillAndExpand"
+                                 HorizontalOptions="FillAndExpand"></local:CustomMap>-->
+        <ContentView Content="{Binding customMap}"/>
+     
+
     </ContentPage.Content>
 </ContentPage>
