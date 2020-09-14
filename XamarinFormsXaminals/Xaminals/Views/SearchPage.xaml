@@ -10,6 +10,7 @@
                 </Image.GestureRecognizers>
             </Image>
 
+            
             <StackLayout Padding="5" BackgroundColor="White"  HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
             <Entry Placeholder="Search address" Text="{Binding Address}" >
                 <Entry.Behaviors>
