@@ -121,7 +121,7 @@ namespace Xaminals.ViewModels
             {
                 return new Command((data) =>
                 {
-                    navigation.PushModalAsync(new SearchhPage());
+                    navigation.PushModalAsync(new SearchPage());
                 });
             }
         }
